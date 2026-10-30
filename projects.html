@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects | Koby Gryciuk</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Koby Gryciuk</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-<div class="wrap bar">
-<a class="brand" href="index.html">Koby Gryciuk</a>
-<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
-<nav aria-label="Main"><ul id="siteNav" class="nav"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="projects.html" aria-current="page">Projects</a></li><li><a href="skills.html">Skills &amp; Training</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-</div>
-</header>
-<main id="main">
-<section class="page-title"><div class="wrap"><h1>Projects</h1><p>Programming projects I have worked on.</p></div></section>
-<section class="section">
-<div class="wrap">
-<div class="grid">
-<article class="card"><img src="images/project1.jpg" alt="Screenshot of Project One"><div class="card-body"><h2>Project One</h2><p>One or two sentences about what this project does and what you built.</p><p class="tech">Technologies: HTML, CSS, JavaScript</p><a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a></div></article>
-<article class="card"><img src="images/project2.jpg" alt="Screenshot of Project Two"><div class="card-body"><h2>Project Two</h2><p>One or two sentences about what this project does and what you built.</p><p class="tech">Technologies: Java</p><a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a></div></article>
-<article class="card"><img src="images/project3.jpg" alt="Screenshot of Project Three"><div class="card-body"><h2>Project Three</h2><p>One or two sentences about what this project does and what you built.</p><p class="tech">Technologies: Python</p><a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a></div></article>
-</div>
-</div>
-</section>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="index.html">Koby Gryciuk</a>
+      <button id="menu-button">Menu</button>
+      <nav id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="skills.html">Skills &amp; Training</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-</main>
-<footer class="site-footer">
-<div class="wrap foot">
-<p>&copy; 2026 Koby Gryciuk</p>
-<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-</div>
-</footer>
-<script src="script.js"></script>
+  <main>
+    <section>
+      <div class="wrap">
+        <h1>Projects</h1>
+        <p>Programming projects I have worked on.</p>
+        <div class="grid">
+          <div class="card">
+            <img src="images/project1.jpg" alt="Screenshot of Project One">
+            <h3>Project One</h3>
+            <p>One or two sentences about what this project does.</p>
+            <p class="small">Technologies: HTML, CSS, JavaScript</p>
+            <a href="https://github.com/">View on GitHub</a>
+          </div>
+          <div class="card">
+            <img src="images/project2.jpg" alt="Screenshot of Project Two">
+            <h3>Project Two</h3>
+            <p>One or two sentences about what this project does.</p>
+            <p class="small">Technologies: Java</p>
+            <a href="https://github.com/">View on GitHub</a>
+          </div>
+          <div class="card">
+            <img src="images/project3.jpg" alt="Screenshot of Project Three">
+            <h3>Project Three</h3>
+            <p>One or two sentences about what this project does.</p>
+            <p class="small">Technologies: Python</p>
+            <a href="https://github.com/">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 Koby Gryciuk</p>
+      <a href="https://github.com/kgryciuk">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

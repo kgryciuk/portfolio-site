@@ -1,47 +1,43 @@
 // Mobile menu toggle
-var toggle = document.getElementById('menuToggle');
-var nav = document.getElementById('siteNav');
-if (toggle && nav) {
-  toggle.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.textContent = open ? 'Close' : 'Menu';
-  });
-}
+var menuButton = document.getElementById('menu-button');
+var nav = document.getElementById('nav');
+
+menuButton.addEventListener('click', function () {
+  nav.classList.toggle('open');
+});
 
 // Contact form validation
-var form = document.getElementById('contactForm');
+var form = document.getElementById('contact-form');
+
 if (form) {
-  var status = document.getElementById('formStatus');
-  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-  function setError(id, msg) {
-    var input = document.getElementById(id);
-    document.getElementById(id + 'Error').textContent = msg;
-    input.classList.toggle('invalid', msg !== '');
-    input.setAttribute('aria-invalid', msg !== '' ? 'true' : 'false');
-    return msg === '';
-  }
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var message = document.getElementById('message').value.trim();
+    var result = document.getElementById('form-result');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = form.name.value.trim();
-    var email = form.email.value.trim();
-    var message = form.message.value.trim();
-
-    var okName = setError('name', name ? '' : 'Enter your name.');
-    var okEmail = setError('email', !email ? 'Enter your email address.' :
-      (emailPattern.test(email) ? '' : 'Enter a valid email address, like name@example.com.'));
-    var okMessage = setError('message', message ? '' : 'Enter a message.');
-
-    if (okName && okEmail && okMessage) {
-      status.className = 'status ok';
-      status.textContent = 'Thanks, ' + name + '. Your message was sent.';
-      form.reset();
-    } else {
-      status.className = 'status bad';
-      status.textContent = 'Your message was not sent. Fix the fields marked above.';
+    var nameError = name ? '' : 'Enter your name.';
+    var emailError = '';
+    if (!email) {
+      emailError = 'Enter your email address.';
+    } else if (!email.includes('@') || !email.includes('.')) {
+      emailError = 'Enter a valid email, like name@example.com.';
     }
-    status.focus();
+    var messageError = message ? '' : 'Enter a message.';
+
+    document.getElementById('name-error').textContent = nameError;
+    document.getElementById('email-error').textContent = emailError;
+    document.getElementById('message-error').textContent = messageError;
+
+    if (nameError || emailError || messageError) {
+      result.textContent = 'Your message was not sent. Fix the errors above.';
+      result.style.color = '#b00020';
+    } else {
+      result.textContent = 'Thanks, ' + name + '. Your message was sent.';
+      result.style.color = '#1b6b2f';
+      form.reset();
+    }
   });
 }
