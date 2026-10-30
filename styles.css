@@ -1,14 +1,13 @@
-/* Colors: grays and reds. Font: Arial everywhere. */
-:root {
+:root {/* CSS variables for colors */
   --red: #a6192e;
   --dark-red: #7f1223;
   --charcoal: #2b2d31;
   --light-gray: #f0f1f3;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; }/* Reset box-sizing for all elements */
 
-body {
+body {/* Basic body styles */
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -16,17 +15,19 @@ body {
   color: #1f2125;
 }
 
+/* Link and image styles */
 a { color: var(--red); }
 img { max-width: 100%; }
 :focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
 
+/* Layout and spacing */
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 .text { max-width: 650px; }
 section { padding: 40px 0; }
 .gray { background: var(--light-gray); }
 .small { font-size: 14px; color: #5a5e66; }
 
-/* Header and footer */
+/* Header and footer design */
 header, footer { background: var(--charcoal); color: white; border: 0 solid var(--red); }
 header { border-bottom-width: 4px; }
 footer { border-top-width: 4px; padding: 20px 0; }
@@ -38,12 +39,12 @@ nav a { display: inline-block; padding: 18px 12px; border-bottom: 3px solid tran
 nav a:hover, nav a.active { border-bottom-color: #ff6b7f; }
 #menu-button { display: none; }
 
-/* Hero */
+/* Hero banner */
 .hero { background: var(--light-gray); padding: 70px 0; }
 .hero h1 { font-size: 48px; margin: 0; }
 .title { color: var(--red); font-size: 24px; font-weight: bold; }
 
-/* Buttons */
+/* Buttons design */
 .button {
   display: inline-block;
   background: var(--red);
@@ -58,18 +59,18 @@ nav a:hover, nav a.active { border-bottom-color: #ff6b7f; }
 .button.outline { background: none; color: var(--charcoal); border-color: var(--charcoal); }
 .button.outline:hover { background: var(--charcoal); color: white; }
 
-/* Cards */
+/* Cards display */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
 .card { background: white; border: 1px solid #ccc; border-top: 4px solid var(--red); padding: 16px; }
 .card img { width: 100%; height: 180px; object-fit: cover; background: #ccc; }
 
-/* Form */
+/* Form styles */
 label { display: block; font-weight: bold; margin-top: 16px; }
 input, textarea { width: 100%; padding: 10px; font: inherit; border: 2px solid #5a5e66; }
 .error { color: #b00020; margin: 4px 0 0; min-height: 1.2em; }
 #form-result { font-weight: bold; }
 
-/* Mobile */
+/* Mobile layout */
 @media (max-width: 650px) {
   #menu-button { display: block; background: none; color: white; border: 2px solid white; padding: 6px 14px; font: inherit; cursor: pointer; }
   nav { display: none; width: 100%; }
