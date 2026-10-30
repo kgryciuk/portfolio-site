@@ -1,0 +1,78 @@
+:root{--red:#a6192e;--red-dark:#7f1223;--charcoal:#2b2d31;--gray:#5a5e66;--light:#f0f1f3;--white:#fff;--text:#1f2125}
+*{box-sizing:border-box}
+html{scroll-padding-top:4rem}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:1rem;line-height:1.6;color:var(--text);background:var(--white)}
+img{max-width:100%;display:block}
+a{color:var(--red)}
+a:hover{color:var(--red-dark)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--white);padding:.5rem 1rem;z-index:20}
+.skip:focus{left:0}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.narrow{max-width:40rem}
+.prose{max-width:44rem}
+
+.site-header{background:var(--charcoal);border-bottom:4px solid var(--red);position:sticky;top:0;z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:4rem;flex-wrap:wrap}
+.brand{color:var(--white);font-weight:bold;font-size:1.25rem;text-decoration:none}
+.nav{list-style:none;margin:0;padding:0;display:flex;gap:.25rem}
+.nav a{display:block;color:var(--white);text-decoration:none;padding:.6rem .9rem;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:#e8a0aa;color:var(--white)}
+.nav a[aria-current="page"]{border-bottom-color:#ff6b7f}
+.menu-toggle{display:none;background:transparent;color:var(--white);border:2px solid var(--white);padding:.4rem .9rem;font:inherit;cursor:pointer}
+.menu-toggle:hover{background:var(--white);color:var(--charcoal)}
+
+.hero{background:var(--light);padding:5rem 0;border-bottom:1px solid #d5d7db}
+.hero h1{font-size:3rem;line-height:1.1;margin:0 0 .5rem}
+.title{font-size:1.5rem;color:var(--red);font-weight:bold;margin:0 0 1rem}
+.tagline{max-width:34rem;font-size:1.125rem;margin:0 0 2rem}
+.actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--red);color:var(--white);border:2px solid var(--red);padding:.7rem 1.5rem;font:bold 1rem Arial,Helvetica,sans-serif;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.btn:hover{background:var(--red-dark);border-color:var(--red-dark);color:var(--white)}
+.btn-alt{background:transparent;color:var(--charcoal);border-color:var(--charcoal)}
+.btn-alt:hover{background:var(--charcoal);border-color:var(--charcoal);color:var(--white)}
+
+.page-title{background:var(--light);padding:2.5rem 0;border-bottom:1px solid #d5d7db}
+.page-title h1{margin:0;font-size:2.25rem}
+.page-title p{margin:.5rem 0 0;color:var(--gray)}
+.section{padding:3rem 0}
+.section.alt{background:var(--light)}
+h2{font-size:1.75rem;margin:2rem 0 .75rem}
+.section h2:first-child{margin-top:0}
+h3{font-size:1.25rem;margin:0 0 .5rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;margin-bottom:1.5rem}
+.card{background:var(--white);border:1px solid #d5d7db;border-top:4px solid var(--red)}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#c9ccd1}
+.card-body{padding:1rem 1.25rem 1.25rem}
+.card h2{font-size:1.25rem;margin:0 0 .5rem}
+.tech{color:var(--gray);font-size:.95rem}
+.panel{background:var(--light);border-left:4px solid var(--red);padding:1.25rem}
+.panel h2{font-size:1.25rem;margin:0 0 .5rem}
+figure{margin:1.5rem 0}
+figcaption{color:var(--gray);font-size:.95rem;margin-top:.5rem}
+
+.field{margin-bottom:1.25rem}
+label{display:block;font-weight:bold;margin-bottom:.35rem}
+input,textarea{width:100%;font:inherit;padding:.65rem;border:2px solid var(--gray);background:var(--white);color:var(--text)}
+input:focus,textarea:focus{border-color:var(--red)}
+.invalid{border-color:#b00020}
+.error{display:block;color:#b00020;font-size:.95rem;min-height:1.2em;margin-top:.25rem}
+.status{margin-top:1rem;font-weight:bold}
+.status.ok{color:#1b6b2f}
+.status.bad{color:#b00020}
+
+.site-footer{background:var(--charcoal);color:var(--white);padding:1.25rem 0;border-top:4px solid var(--red)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.foot p{margin:0}
+.site-footer a{color:var(--white)}
+
+@media (max-width:42rem){
+.menu-toggle{display:block}
+.bar nav{width:100%}
+.nav{display:none;flex-direction:column;padding-bottom:.75rem}
+.nav.open{display:flex}
+.hero{padding:3rem 0}
+.hero h1{font-size:2.25rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
